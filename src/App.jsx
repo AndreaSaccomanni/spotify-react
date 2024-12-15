@@ -16,9 +16,9 @@ const App = () => {
         </Col>
         <Col md={9}>
           <NavbarLinks />
-          <MainSection sectionId="rockSection" sectionTitle="Rock Section" artistName="queen" />
-          <MainSection sectionId="popSection" sectionTitle="Pop Section" artistName="katyperry" />
-          <MainSection sectionId="hipHopSection" sectionTitle="#Hip Hop " artistName="eminem" />
+          <MainSection sectionId="rockSection" sectionTitle="Rock Classic" artistName="queen" />
+          <MainSection sectionId="popSection" sectionTitle="Pop Culture" artistName="katyperry" />
+          <MainSection sectionId="hipHopSection" sectionTitle="#HipHop " artistName="eminem" />
         </Col>
       </Row>
       <Player />
