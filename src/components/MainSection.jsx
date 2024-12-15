@@ -32,9 +32,9 @@ const MainSection = ({ sectionId, sectionTitle, artistName }) => {
               {songs.map((song) => (
                 <Col key={song.id} className="text-center">
                   <img src={song.album.cover_medium} alt={song.title} className="img-fluid" />
-                  <p>
+                  <p className="pt-2 text-white fw-bold" style={{ fontSize: "12px" }}>
                     Track: &quot;{song.title}&quot; <br />
-                    Artist: &quot;{song.artist.name}&quot;
+                    Artist: {song.artist.name}
                   </p>
                 </Col>
               ))}
