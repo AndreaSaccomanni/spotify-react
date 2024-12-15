@@ -12,7 +12,7 @@ const MainSection = ({ sectionId, sectionTitle, artistName }) => {
       try {
         const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${artistName}`);
         const data = await response.json();
-        // Salva solo i primi 4 risultati per la sezione
+
         dispatch(setSongsForSection({ sectionId, songs: data.data.slice(0, 4) }));
       } catch (error) {
         console.error("Error fetching songs:", error);
