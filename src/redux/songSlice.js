@@ -9,9 +9,12 @@ const songSlice = createSlice({
     setSongsForSection: (state, action) => {
       const { sectionId, songs } = action.payload;
       state.sections[sectionId] = songs;
+    },
+    setSelectedSong: (state, action) => {
+      state.selectedSong = action.payload; // Impostiamo la canzone selezionata
     }
   }
 });
 
-export const { setSongsForSection } = songSlice.actions;
+export const { setSongsForSection, setSelectedSong } = songSlice.actions;
 export default songSlice.reducer;

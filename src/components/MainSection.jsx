@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import { setSongsForSection } from "../redux/songSlice";
+import { setSongsForSection, setSelectedSong } from "../redux/songSlice";
 
 const MainSection = ({ sectionId, sectionTitle, artistName }) => {
   const dispatch = useDispatch();
@@ -22,6 +22,10 @@ const MainSection = ({ sectionId, sectionTitle, artistName }) => {
     fetchSongs();
   }, [artistName, sectionId, dispatch]);
 
+  const handleSongClick = (song) => {
+    dispatch(setSelectedSong(song)); // Imposta la canzone selezionata
+  };
+
   return (
     <>
       <Row>
@@ -30,7 +34,7 @@ const MainSection = ({ sectionId, sectionTitle, artistName }) => {
             <h2 className="text-white">{sectionTitle}</h2>
             <Row className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3 text-white" id={`${sectionId}Section`}>
               {songs.map((song) => (
-                <Col key={song.id} className="text-center">
+                <Col key={song.id} className="text-center" onClick={() => handleSongClick(song)}>
                   <img src={song.album.cover_medium} alt={song.title} className="img-fluid" />
                   <p className="pt-2 text-white fw-bold" style={{ fontSize: "12px" }}>
                     Track: &quot;{song.title}&quot; <br />
