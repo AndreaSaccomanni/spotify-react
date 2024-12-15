@@ -11,7 +11,7 @@ const songSlice = createSlice({
       state.sections[sectionId] = songs;
     },
     setSelectedSong: (state, action) => {
-      state.selectedSong = action.payload; // Impostiamo la canzone selezionata
+      state.selectedSong = action.payload;
     }
   }
 });
